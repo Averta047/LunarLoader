@@ -1,6 +1,7 @@
 #include "CLuaManager.h"
 
 #include <iostream>
+#include <windows.h>
 
 int main()
 {
@@ -10,7 +11,7 @@ int main()
 	Global::LuaManager.LoadScript("script2.lua");
 	Global::LuaManager.LoadScript("script3.lua");
 
-	while (true)
+	while (!GetAsyncKeyState(VK_END))
 	{
 		for (int i = 0; i < Global::LuaManager.m_Scripts.size(); i++)
 		{
@@ -19,6 +20,10 @@ int main()
 
 		Global::LuaManager.Update();
 	}
+
+	Global::LuaManager.Uninitialize();
+
+	system("pause");
 
 	return EXIT_SUCCESS;
 }

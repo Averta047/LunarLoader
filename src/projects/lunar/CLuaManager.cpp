@@ -66,7 +66,7 @@ void CLuaManager::Update()
 			std::cerr << it->m_pName << ": ended" << std::endl;
 			lua_pop(it->m_pLuaState, 1);
 			lua_close(it->m_pLuaState);
-			it = m_Scripts.erase(it); // Erase and update iterator
+			it = m_Scripts.erase(it);
 		}
 		else
 		{
