@@ -13,10 +13,10 @@ public:
 class CLuaManager
 {
 public:
-	void Initialize();
+	bool Initialize();
 	void Uninitialize();
 
-	void LoadScript(const char* name);
+	bool LoadScript(const char* name);
 	void UnloadScript(lua_State* pLuaState);
 
 	void Update();

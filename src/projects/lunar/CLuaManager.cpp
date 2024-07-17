@@ -1,11 +1,13 @@
 #include "CLuaManager.h"
+#include "CConsole.h"
+
 #include "Lua.hpp"
 
 #include <iostream>
 
-void CLuaManager::Initialize()
+bool CLuaManager::Initialize()
 {
-
+	return true;
 }
 
 void CLuaManager::Uninitialize()
@@ -13,14 +15,14 @@ void CLuaManager::Uninitialize()
 	if (m_Scripts.empty())
 		return;
 
-	for (int i = 0; i < m_Scripts.size(); i++)
+	for (size_t i = 0; i < m_Scripts.size(); i++)
 	{
 		UnloadScript(m_Scripts[i].m_pLuaState);
 //		delete& m_Scripts[i];
 	}
 }
 
-void CLuaManager::LoadScript(const char* name)
+bool CLuaManager::LoadScript(const char* name)
 {
 	lua_Script luaScript = { 0 };
 	luaScript.m_pName = name;
@@ -31,13 +33,17 @@ void CLuaManager::LoadScript(const char* name)
 	if (luaL_dofile(luaScript.m_pLuaState, luaScript.m_pName) != LUA_OK) 
 	{
 		const char* error = lua_tostring(luaScript.m_pLuaState, -1);
-		std::cerr << "Error loading script '" << luaScript.m_pName << "': " << error << std::endl;
+		Global::Console.Print("Error loading script '%s': %s", name, error);
 		lua_pop(luaScript.m_pLuaState, 1);
 		lua_close(luaScript.m_pLuaState);
+
+		return false;
 	}
 	else 
 	{
 		m_Scripts.push_back(luaScript);
+
+		return true;
 	}
 }
 
@@ -63,7 +69,7 @@ void CLuaManager::Update()
 		{
 			//const char* error = lua_tostring(it->m_pLuaState, -1);
 			//std::cerr << "Error executing script '" << it->m_pName << "': " << error << std::endl;
-			std::cerr << it->m_pName << ": ended" << std::endl;
+			Global::Console.Print("%s: ended", it->m_pName);
 			lua_pop(it->m_pLuaState, 1);
 			lua_close(it->m_pLuaState);
 			it = m_Scripts.erase(it);
