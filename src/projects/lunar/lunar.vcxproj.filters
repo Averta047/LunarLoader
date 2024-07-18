@@ -18,9 +18,36 @@
     <Filter Include="vendors\LuaBridge\detail">
       <UniqueIdentifier>{55da29f4-a8ff-4d11-95b6-7c2592932420}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendors\MinHook">
+      <UniqueIdentifier>{9c3496bb-780e-43cf-b759-366176e90e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\MinHook\src">
+      <UniqueIdentifier>{c64ae1d7-cc0e-4da7-a28a-9bf81a0f5905}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\MinHook\include">
+      <UniqueIdentifier>{c2376370-25c4-4b8a-8171-1be4df3832b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\MinHook\src\hde">
+      <UniqueIdentifier>{67e20e73-c880-44eb-b554-2681caed160b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects\lunar\Hooks">
+      <UniqueIdentifier>{5b5c43b0-7323-489f-8f56-da6308be7995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects\lunar\Hooks\Definitions">
+      <UniqueIdentifier>{4899dc0c-6f34-4e96-b387-b294922dc13e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\Dear ImGui">
+      <UniqueIdentifier>{54951386-3ce2-480d-b985-164f51342982}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\Dear ImGui\backends">
+      <UniqueIdentifier>{004a12c8-e13b-4ca8-80cf-e9bd9e9209a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects\lunar\Utils">
+      <UniqueIdentifier>{3c16889b-ac03-483e-8a8b-fbc0e2fc606a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="DLLMain.cpp">
       <Filter>projects\lunar</Filter>
     </ClCompile>
     <ClCompile Include="CLuaManager.cpp">
@@ -28,6 +55,57 @@
     </ClCompile>
     <ClCompile Include="CConsole.cpp">
       <Filter>projects\lunar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\MinHook\src\buffer.c">
+      <Filter>vendors\MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\MinHook\src\hook.c">
+      <Filter>vendors\MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\MinHook\src\trampoline.c">
+      <Filter>vendors\MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\MinHook\src\hde\hde32.c">
+      <Filter>vendors\MinHook\src\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\MinHook\src\hde\hde64.c">
+      <Filter>vendors\MinHook\src\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks\Hooks.cpp">
+      <Filter>projects\lunar\Hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\imgui.cpp">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\imgui_demo.cpp">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\imgui_draw.cpp">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\imgui_tables.cpp">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\imgui_widgets.cpp">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\backends\imgui_impl_dx9.cpp">
+      <Filter>vendors\Dear ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\backends\imgui_impl_win32.cpp">
+      <Filter>vendors\Dear ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\VFunc.cpp">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_Reset.cpp">
+      <Filter>projects\lunar\Hooks\Definitions</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_Present.cpp">
+      <Filter>projects\lunar\Hooks\Definitions</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_EndScene.cpp">
+      <Filter>projects\lunar\Hooks\Definitions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +204,63 @@
     </ClInclude>
     <ClInclude Include="..\..\vendors\LuaBridge\detail\Userdata.h">
       <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\MinHook\include\MinHook.h">
+      <Filter>vendors\MinHook\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\MinHook\src\buffer.h">
+      <Filter>vendors\MinHook\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\MinHook\src\trampoline.h">
+      <Filter>vendors\MinHook\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\MinHook\src\hde\hde32.h">
+      <Filter>vendors\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\MinHook\src\hde\hde64.h">
+      <Filter>vendors\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\MinHook\src\hde\pstdint.h">
+      <Filter>vendors\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\MinHook\src\hde\table32.h">
+      <Filter>vendors\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\MinHook\src\hde\table64.h">
+      <Filter>vendors\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks\Hook.h">
+      <Filter>projects\lunar\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks\Hooks.h">
+      <Filter>projects\lunar\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\imconfig.h">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\imgui.h">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\imgui_internal.h">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\imstb_rectpack.h">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\imstb_textedit.h">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\imstb_truetype.h">
+      <Filter>vendors\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\backends\imgui_impl_dx9.h">
+      <Filter>vendors\Dear ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\backends\imgui_impl_win32.h">
+      <Filter>vendors\Dear ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\VFunc.h">
+      <Filter>projects\lunar\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

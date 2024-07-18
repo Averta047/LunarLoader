@@ -2,9 +2,12 @@
 #include "CConsole.h"
 
 #include "Lua.hpp"
-#include "LuaBridge/LuaBridge.h"
+#include "LuaBridge.h"
 
 #include <iostream>
+
+#include "plugin.h"
+#include "CPed.h"
 
 bool CLuaManager::Initialize()
 {
@@ -23,6 +26,16 @@ void CLuaManager::Uninitialize()
 	}
 }
 
+float GetPlayerHealth()
+{
+	CPed* pPlayer = FindPlayerPed(-1);
+
+	if (!pPlayer)
+		return -1.0f;
+
+	return pPlayer->m_fHealth;
+}
+
 bool CLuaManager::LoadScript(const char* name)
 {
 	lua_Script luaScript = { 0 };
@@ -30,6 +43,9 @@ bool CLuaManager::LoadScript(const char* name)
 	luaScript.m_pLuaState = luaL_newstate();
 
 	luaL_openlibs(luaScript.m_pLuaState);
+
+	luabridge::getGlobalNamespace(luaScript.m_pLuaState)
+		.addFunction("GetPlayerHealth", &GetPlayerHealth);
 
 	if (luaL_dofile(luaScript.m_pLuaState, luaScript.m_pName) != LUA_OK)
 	{
