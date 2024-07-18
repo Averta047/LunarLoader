@@ -1,29 +1,28 @@
 #pragma once
 
 #include <vector>
-#include <sol/sol.hpp>
 
+struct lua_State;
 struct lua_Script
 {
 public:
-    sol::state m_LuaState;
-    const char* m_pName;
+	lua_State* m_pLuaState;
+	const char* m_pName;
 };
 
 class CLuaManager
 {
 public:
-    bool Initialize();
-    void Uninitialize();
+	bool Initialize();
+	void Uninitialize();
 
-    bool LoadScript(const char* name);
-    void UnloadScript(const char* name);
+	bool LoadScript(const char* name);
+	void UnloadScript(lua_State* pLuaState);
 
-    void Update();
+	void Update();
 
-public:
-    std::vector<lua_Script> m_Scripts;
+public: // private:
+	std::vector<lua_Script> m_Scripts;
 };
 
 namespace Global { inline CLuaManager LuaManager; }
- 

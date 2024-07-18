@@ -34,5 +34,14 @@
     <ClInclude Include="CConsole.h">
       <Filter>projects\lunar</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\vendors\sol\config.hpp">
+      <Filter>vendors\sol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\sol\forward.hpp">
+      <Filter>vendors\sol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\sol\sol.hpp">
+      <Filter>vendors\sol</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
