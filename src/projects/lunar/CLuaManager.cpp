@@ -2,6 +2,7 @@
 #include "CConsole.h"
 
 #include "Lua.hpp"
+#include "LuaBridge/LuaBridge.h"
 
 #include <iostream>
 

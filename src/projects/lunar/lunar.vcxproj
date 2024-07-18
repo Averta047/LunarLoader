@@ -174,9 +174,36 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\vendors\sol\config.hpp" />
-    <ClInclude Include="..\..\vendors\sol\forward.hpp" />
-    <ClInclude Include="..\..\vendors\sol\sol.hpp" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Array.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\CFunctions.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\ClassInfo.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Config.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Enum.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Errors.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Expected.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\FlagSet.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\FuncTraits.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Globals.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Invoke.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Iterator.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaException.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaHelpers.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaRef.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Namespace.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Options.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Overload.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Result.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\ScopeGuard.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Stack.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\TypeTraits.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Userdata.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Dump.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\List.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\LuaBridge.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Map.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Set.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\UnorderedMap.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Vector.h" />
     <ClInclude Include="CLuaManager.h" />
     <ClInclude Include="CConsole.h" />
   </ItemGroup>

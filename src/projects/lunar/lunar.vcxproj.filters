@@ -12,8 +12,11 @@
     <Filter Include="projects\lunar">
       <UniqueIdentifier>{07ec2dc8-b8cd-4d57-99e8-c3fdd43385b8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="vendors\sol">
-      <UniqueIdentifier>{00a2b574-ea6a-4787-92a1-ccaaa54a6043}</UniqueIdentifier>
+    <Filter Include="vendors\LuaBridge">
+      <UniqueIdentifier>{9ded137b-3eca-423a-82e7-334f76f7a549}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\LuaBridge\detail">
+      <UniqueIdentifier>{55da29f4-a8ff-4d11-95b6-7c2592932420}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,14 +37,95 @@
     <ClInclude Include="CConsole.h">
       <Filter>projects\lunar</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\vendors\sol\config.hpp">
-      <Filter>vendors\sol</Filter>
+    <ClInclude Include="..\..\vendors\LuaBridge\Array.h">
+      <Filter>vendors\LuaBridge</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\vendors\sol\forward.hpp">
-      <Filter>vendors\sol</Filter>
+    <ClInclude Include="..\..\vendors\LuaBridge\Dump.h">
+      <Filter>vendors\LuaBridge</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\vendors\sol\sol.hpp">
-      <Filter>vendors\sol</Filter>
+    <ClInclude Include="..\..\vendors\LuaBridge\List.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\LuaBridge.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\Map.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\Set.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\UnorderedMap.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\Vector.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\CFunctions.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\ClassInfo.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Config.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Enum.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Errors.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Expected.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\FlagSet.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\FuncTraits.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Globals.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Invoke.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Iterator.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaException.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaHelpers.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaRef.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Namespace.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Options.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Overload.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Result.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\ScopeGuard.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Stack.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\TypeTraits.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Userdata.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
