@@ -10,6 +10,10 @@
 
 // Gui Addons
 //#include "imgui_freetype.h"
+#include "imgui_addons.h"
+
+// Fonts
+#include "../../Resources/Fonts/MuseoSans300.h"
 
 CGuiMgr::CGuiMgr()
 {
@@ -54,33 +58,58 @@ bool CGuiMgr::Initialize(HWND hWnd, IDirect3DDevice9* pDevice)
     ImGui::StyleColorsDark();
 
     // Custom styles
-    style.WindowRounding        = 4;
-    style.ChildRounding         = 3;
-    style.FrameRounding         = 2;
-    style.GrabRounding          = 1;
-    style.PopupRounding         = 2;
-    style.TabRounding           = 2;
-    style.ScrollbarRounding     = 1;
+    style.WindowRounding    = 5;
+    style.ChildRounding     = 6;
+    style.FrameRounding     = 6;
+    style.GrabRounding      = 3;
+    style.PopupRounding     = 6;
+    style.TabRounding       = 8;
+    style.ScrollbarRounding = 3;
 
-    style.ButtonTextAlign       = { 0.5f, 0.5f };
-    style.WindowTitleAlign      = { 0.5f, 0.5f };
-    style.FramePadding          = { 8.0f, 8.0f };
-    style.WindowPadding         = { 10.0f, 10.0f };
-    style.ItemSpacing           = style.WindowPadding;
-    style.ItemInnerSpacing      = { style.FramePadding.x, 2 };
+    style.ButtonTextAlign   = { 0.5f, 0.5f };
+    style.WindowTitleAlign  = { 0.5f, 0.5f };
+    style.FramePadding      = { 9.0f, 9.0f };
+    style.WindowPadding     = { 20.0f, 20.0f };
+    style.ItemSpacing       = { 8.0f, 8.0f };
+    style.ItemInnerSpacing  = { style.WindowPadding.x, style.FramePadding.y };
 
-    style.WindowBorderSize      = 1;
-    style.FrameBorderSize       = 1;
-    style.PopupBorderSize       = 1;
+    style.WindowBorderSize  = 1;
+    style.FrameBorderSize   = 1;
 
-    style.ScrollbarSize = 12.f;
-    style.GrabMinSize = 8.f;
+    style.ScrollbarSize     = 12.f;
+    style.GrabMinSize       = 8.f;
+    
+    style.Colors[ImGuiCol_WindowBg]             = ImAdd::HexToColorVec4(0x262626, 1.0f);
+    style.Colors[ImGuiCol_ChildBg]              = ImAdd::HexToColorVec4(0x262626, 1.0f);
+    style.Colors[ImGuiCol_PopupBg]              = ImAdd::HexToColorVec4(0x262626, 1.0f);
+    style.Colors[ImGuiCol_MenuBarBg]            = ImAdd::HexToColorVec4(0x262626, 1.0f);
+    style.Colors[ImGuiCol_ScrollbarBg]          = ImAdd::HexToColorVec4(0x262626, 1.0f);
 
-    /*
-    ImFontConfig cfg;
-    cfg.FontBuilderFlags |= ImGuiFreeTypeBuilderFlags::ImGuiFreeTypeBuilderFlags_ForceAutoHint;
-    io.Fonts->AddFontFromMemoryCompressedTTF(Poppins_Medium_compressed_data, Poppins_Medium_compressed_size, 16, &cfg, io.Fonts->GetGlyphRangesDefault());
-    */
+    style.Colors[ImGuiCol_Border]               = ImAdd::HexToColorVec4(0x404040, 1.0f);
+    style.Colors[ImGuiCol_Separator]            = style.Colors[ImGuiCol_Border];
+
+    style.Colors[ImGuiCol_CheckMark]            = ImAdd::HexToColorVec4(0xFFFFFF, 1.0f);
+    style.Colors[ImGuiCol_Text]                 = ImAdd::HexToColorVec4(0xFFFFFF, 1.0f);
+    style.Colors[ImGuiCol_TextDisabled]         = ImAdd::HexToColorVec4(0x949494, 1.0f);
+
+    style.Colors[ImGuiCol_SliderGrab]           = ImAdd::HexToColorVec4(0xFF003D, 1.0f);
+    style.Colors[ImGuiCol_SliderGrabActive]     = ImAdd::HexToColorVec4(0xA80F34, 1.0f);
+
+    style.Colors[ImGuiCol_Button]               = ImAdd::HexToColorVec4(0x2F2F2F, 1.0f);
+    style.Colors[ImGuiCol_ButtonHovered]        = ImAdd::HexToColorVec4(0x2C2C2C, 1.0f);
+    style.Colors[ImGuiCol_ButtonActive]         = ImAdd::HexToColorVec4(0x2A2A2A, 1.0f);
+
+    style.Colors[ImGuiCol_FrameBg]              = style.Colors[ImGuiCol_Button];
+    style.Colors[ImGuiCol_FrameBgHovered]       = style.Colors[ImGuiCol_ButtonHovered];
+    style.Colors[ImGuiCol_FrameBgActive]        = style.Colors[ImGuiCol_ButtonActive];
+
+    style.Colors[ImGuiCol_Header]               = style.Colors[ImGuiCol_Button];
+    style.Colors[ImGuiCol_HeaderHovered]        = style.Colors[ImGuiCol_ButtonHovered];
+    style.Colors[ImGuiCol_HeaderActive]         = style.Colors[ImGuiCol_ButtonActive];
+
+    //ImFontConfig cfg;
+    //cfg.FontBuilderFlags |= ImGuiFreeTypeBuilderFlags::ImGuiFreeTypeBuilderFlags_ForceAutoHint;
+    io.Fonts->AddFontFromMemoryCompressedTTF(MuseoSans300_compressed_data, MuseoSans300_compressed_size, 15, nullptr, io.Fonts->GetGlyphRangesDefault());
 
     // Setup Platform/Renderer backends
     result &= ImGui_ImplWin32_Init(hWnd);

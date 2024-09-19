@@ -58,6 +58,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\vendors\Dear ImGui\addons\imgui_addons.cpp" />
+    <ClCompile Include="..\..\vendors\Dear ImGui\addons\imgui_lua_editor.cpp" />
     <ClCompile Include="..\..\vendors\Dear ImGui\backends\imgui_impl_dx9.cpp" />
     <ClCompile Include="..\..\vendors\Dear ImGui\backends\imgui_impl_win32.cpp" />
     <ClCompile Include="..\..\vendors\Dear ImGui\imgui.cpp" />
@@ -116,6 +118,8 @@
     <ClCompile Include="Utils\VFunc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\vendors\Dear ImGui\addons\imgui_addons.h" />
+    <ClInclude Include="..\..\vendors\Dear ImGui\addons\imgui_lua_editor.h" />
     <ClInclude Include="..\..\vendors\Dear ImGui\backends\imgui_impl_dx9.h" />
     <ClInclude Include="..\..\vendors\Dear ImGui\backends\imgui_impl_win32.h" />
     <ClInclude Include="..\..\vendors\Dear ImGui\imconfig.h" />
@@ -197,6 +201,7 @@
     <ClInclude Include="Gui\Panels\MainPanel.h" />
     <ClInclude Include="Hooks\Hook.h" />
     <ClInclude Include="Hooks\Hooks.h" />
+    <ClInclude Include="Resources\Fonts\MuseoSans300.h" />
     <ClInclude Include="Utils\Interface.h" />
     <ClInclude Include="Utils\Math.h" />
     <ClInclude Include="Utils\Pattern.h" />

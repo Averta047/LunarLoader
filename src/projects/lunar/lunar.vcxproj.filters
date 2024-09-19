@@ -57,6 +57,15 @@
     <Filter Include="projects\lunar\Gui\Panels">
       <UniqueIdentifier>{45985e44-85c7-46bf-b5e8-5772e132c045}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendors\Dear ImGui\addons">
+      <UniqueIdentifier>{2722ba4d-81e1-401f-ae4f-e0a64af3004a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects\lunar\Resources">
+      <UniqueIdentifier>{7849dd5a-83f4-4895-9146-dd5934470838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects\lunar\Resources\Fonts">
+      <UniqueIdentifier>{b3f9e04d-ac5d-4b16-8dcd-6824367e3b2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DLLMain.cpp">
@@ -226,6 +235,12 @@
     </ClCompile>
     <ClCompile Include="Gui\Panels\MainPanel.cpp">
       <Filter>projects\lunar\Gui\Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\addons\imgui_lua_editor.cpp">
+      <Filter>vendors\Dear ImGui\addons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\Dear ImGui\addons\imgui_addons.cpp">
+      <Filter>vendors\Dear ImGui\addons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -489,6 +504,15 @@
     </ClInclude>
     <ClInclude Include="Gui\Panels\MainPanel.h">
       <Filter>projects\lunar\Gui\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\addons\imgui_lua_editor.h">
+      <Filter>vendors\Dear ImGui\addons</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\Fonts\MuseoSans300.h">
+      <Filter>projects\lunar\Resources\Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\Dear ImGui\addons\imgui_addons.h">
+      <Filter>vendors\Dear ImGui\addons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
