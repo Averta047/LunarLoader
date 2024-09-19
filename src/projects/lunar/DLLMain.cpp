@@ -1,6 +1,7 @@
 #include "CLuaManager.h"
 #include "CConsole.h"
 
+#include "Utils/Pattern.h"
 #include "Hooks/Hooks.h"
 
 #include <iostream>
@@ -11,31 +12,13 @@ void MainThread(HMODULE hInstance)
 	Global::Console.Init("LunarLoader - Console - Build: " __DATE__, false, true);
 	Global::Console.Print("LunarLoader Injected !\nInitializing core...");
 
+	Interfaces::Direct3DDevice9 = **(IDirect3DDevice9***)(Util::Pattern.Find("shaderapidx9.dll", "55 8B EC 51 56 8B F1 83 7E 24 00") + 0x2B);
+
 	Global::Hooks.Initialize();
+
+	while (!GetAsyncKeyState(VK_F11))
+		Sleep(420);
 	
-	if (Global::LuaManager.Initialize()) {
-		Global::Console.Print("CLuaManager initialized");
-	}
-	else {
-		Global::Console.Print("Faild initializing CLuaManager. exiting...");
-		FreeLibraryAndExitThread(hInstance, EXIT_FAILURE);
-	}
-
-	Global::LuaManager.LoadScript("core.lua");
-
-	while (!GetAsyncKeyState(VK_END))
-	{
-		for (size_t i = 0; i < Global::LuaManager.m_Scripts.size(); i++)
-		{
-			std::cout << "Currently Running Scripts : " << Global::LuaManager.m_Scripts[i].m_pName << std::endl;
-		}
-
-		Global::LuaManager.Update();
-		
-		Sleep(10);
-	}
-
-	Global::LuaManager.Uninitialize();
 	Global::Hooks.Uninitialize();
 	Global::Console.Close();
 

@@ -1,9 +1,9 @@
 #include "../Hooks.h"
 
-#include "imgui.h"
-#include "imgui_internal.h"
-#include "imgui_impl_dx9.h"
-#include "imgui_impl_win32.h"
+#include "../../Gui/CGuiMgr.h"
+
+#include <d3d9.h>
+#include <d3dx9.h>
 
 DEFINE_HOOK(Direct3DDevice9_EndScene, void, __fastcall, void* ecx, void* edx, IDirect3DDevice9* pDevice)
 {
@@ -16,39 +16,12 @@ DEFINE_HOOK(Direct3DDevice9_EndScene, void, __fastcall, void* ecx, void* edx, ID
 	{
 		pDevice->GetCreationParameters(&pParameters);
 
-		IMGUI_CHECKVERSION();
-		ImGui::CreateContext();
-		ImGuiStyle& style = ImGui::GetStyle();
-		ImGuiIO& io = ImGui::GetIO(); (void)io;
+		Global::LunarGui.Initialize(pParameters.hFocusWindow, pDevice);
 
-		io.IniFilename = nullptr;               // Disable INI File  
-		GImGui->NavDisableHighlight = true;     // Disable Highlighting
-
-		ImGui::StyleColorsDark();
-
-		ImGui_ImplWin32_Init(pParameters.hFocusWindow);
-		ImGui_ImplDX9_Init(pDevice);
-
-		//Global::Menu.Initialize(FindWindow("Valve001", nullptr), pDevice);
 		init = false;
 	}
 
-	//pDevice->SetRenderState(D3DRS_SRGBWRITEENABLE, FALSE);
-	//Global::Menu.Render();
-	ImGui_ImplDX9_NewFrame();
-	ImGui_ImplWin32_NewFrame();
-	ImGui::NewFrame();
-	{
-		//Global::LuaMgr.RenderThink();
-		ImGui::Begin("Test Window");
-		{
+	pDevice->SetRenderState(D3DRS_SRGBWRITEENABLE, FALSE);
 
-		}
-		ImGui::End();
-	}
-	ImGui::Render();
-	ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
-
-	// bad idea
-	//ImGui_ImplDX9_InvalidateDeviceObjects();
+	Global::LunarGui.Render();
 }

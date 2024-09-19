@@ -33,8 +33,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>../../../bin/</OutDir>
     <IntDir>../../../bin/objs/$(ProjectName).$(Platform).$(Configuration)/</IntDir>
-    <IncludePath>$(SolutionDir)vendors\lua54\include;$(SolutionDir)vendors\Microsoft DirectX SDK\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)vendors\lua54\lib\x86;$(SolutionDir)vendors\Microsoft DirectX SDK\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)vendors\Microsoft DirectX SDK\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)vendors\Microsoft DirectX SDK\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -45,7 +45,7 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_USE_MATH_DEFINES;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;GTASA;PLUGIN_SGV_10US;RW;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendors\LuaBridge;$(SolutionDir)vendors\MinHook\include;$(SolutionDir)vendors\PluginSDK\Include\shared;$(SolutionDir)vendors\PluginSDK\Include\shared\game;$(SolutionDir)vendors\PluginSDK\Include\plugin_sa;$(SolutionDir)vendors\PluginSDK\Include\plugin_sa\game_sa;$(SolutionDir)vendors\Dear ImGui;$(SolutionDir)vendors\Dear ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendors\Lua54;$(SolutionDir)vendors\LuaBridge;$(SolutionDir)vendors\MinHook\include;$(SolutionDir)vendors\Dear ImGui;$(SolutionDir)vendors\Dear ImGui\addons;$(SolutionDir)vendors\Dear ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -53,7 +53,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>lua54.lib;d3d9.lib;d3dx9.lib;plugin.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)vendors\PluginSDK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -65,6 +65,38 @@
     <ClCompile Include="..\..\vendors\Dear ImGui\imgui_draw.cpp" />
     <ClCompile Include="..\..\vendors\Dear ImGui\imgui_tables.cpp" />
     <ClCompile Include="..\..\vendors\Dear ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lapi.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lauxlib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lbaselib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lcode.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lcorolib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lctype.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\ldblib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\ldebug.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\ldo.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\ldump.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lfunc.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lgc.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\linit.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\liolib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\llex.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lmathlib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lmem.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\loadlib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lobject.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lopcodes.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\loslib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lparser.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lstate.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lstring.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lstrlib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\ltable.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\ltablib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\ltm.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lundump.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lutf8lib.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lvm.c" />
+    <ClCompile Include="..\..\vendors\lua54\lua\lzio.c" />
     <ClCompile Include="..\..\vendors\MinHook\src\buffer.c" />
     <ClCompile Include="..\..\vendors\MinHook\src\hde\hde32.c" />
     <ClCompile Include="..\..\vendors\MinHook\src\hde\hde64.c" />
@@ -72,11 +104,15 @@
     <ClCompile Include="..\..\vendors\MinHook\src\trampoline.c" />
     <ClCompile Include="CLuaManager.cpp" />
     <ClCompile Include="CConsole.cpp" />
+    <ClCompile Include="Gui\CGuiMgr.cpp" />
+    <ClCompile Include="Gui\PanelMgr.cpp" />
+    <ClCompile Include="Gui\Panels\MainPanel.cpp" />
     <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_EndScene.cpp" />
-    <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_Present.cpp" />
-    <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_Reset.cpp" />
     <ClCompile Include="Hooks\Hooks.cpp" />
     <ClCompile Include="DLLMain.cpp" />
+    <ClCompile Include="Utils\Interface.cpp" />
+    <ClCompile Include="Utils\Math.cpp" />
+    <ClCompile Include="Utils\Pattern.cpp" />
     <ClCompile Include="Utils\VFunc.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +124,34 @@
     <ClInclude Include="..\..\vendors\Dear ImGui\imstb_rectpack.h" />
     <ClInclude Include="..\..\vendors\Dear ImGui\imstb_textedit.h" />
     <ClInclude Include="..\..\vendors\Dear ImGui\imstb_truetype.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lapi.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lauxlib.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lcode.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lctype.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\ldebug.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\ldo.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lfunc.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lgc.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\ljumptab.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\llex.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\llimits.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lmem.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lobject.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lopcodes.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lopnames.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lparser.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lprefix.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lstate.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lstring.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\ltable.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\ltm.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lua.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lua.hpp" />
+    <ClInclude Include="..\..\vendors\lua54\lua\luaconf.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lualib.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lundump.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lvm.h" />
+    <ClInclude Include="..\..\vendors\lua54\lua\lzio.h" />
     <ClInclude Include="..\..\vendors\LuaBridge\Array.h" />
     <ClInclude Include="..\..\vendors\LuaBridge\detail\CFunctions.h" />
     <ClInclude Include="..\..\vendors\LuaBridge\detail\ClassInfo.h" />
@@ -128,9 +192,20 @@
     <ClInclude Include="..\..\vendors\MinHook\src\trampoline.h" />
     <ClInclude Include="CLuaManager.h" />
     <ClInclude Include="CConsole.h" />
+    <ClInclude Include="Gui\CGuiMgr.h" />
+    <ClInclude Include="Gui\CGuiPanel.h" />
+    <ClInclude Include="Gui\Panels\MainPanel.h" />
     <ClInclude Include="Hooks\Hook.h" />
     <ClInclude Include="Hooks\Hooks.h" />
+    <ClInclude Include="Utils\Interface.h" />
+    <ClInclude Include="Utils\Math.h" />
+    <ClInclude Include="Utils\Pattern.h" />
+    <ClInclude Include="Utils\Vector.h" />
+    <ClInclude Include="Utils\Vector2D.h" />
     <ClInclude Include="Utils\VFunc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\vendors\lua54\lua\Makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

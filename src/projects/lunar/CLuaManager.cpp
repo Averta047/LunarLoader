@@ -1,13 +1,10 @@
 #include "CLuaManager.h"
 #include "CConsole.h"
 
-#include "Lua.hpp"
+#include "lua/Lua.hpp"
 #include "LuaBridge.h"
 
 #include <iostream>
-
-#include "plugin.h"
-#include "CPed.h"
 
 bool CLuaManager::Initialize()
 {
@@ -22,18 +19,8 @@ void CLuaManager::Uninitialize()
 	for (size_t i = 0; i < m_Scripts.size(); i++)
 	{
 		UnloadScript(m_Scripts[i].m_pLuaState);
-		//		delete& m_Scripts[i];
+//		delete& m_Scripts[i];
 	}
-}
-
-float GetPlayerHealth()
-{
-	CPed* pPlayer = FindPlayerPed(-1);
-
-	if (!pPlayer)
-		return -1.0f;
-
-	return pPlayer->m_fHealth;
 }
 
 bool CLuaManager::LoadScript(const char* name)
@@ -43,9 +30,6 @@ bool CLuaManager::LoadScript(const char* name)
 	luaScript.m_pLuaState = luaL_newstate();
 
 	luaL_openlibs(luaScript.m_pLuaState);
-
-	luabridge::getGlobalNamespace(luaScript.m_pLuaState)
-		.addFunction("GetPlayerHealth", &GetPlayerHealth);
 
 	if (luaL_dofile(luaScript.m_pLuaState, luaScript.m_pName) != LUA_OK)
 	{

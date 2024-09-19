@@ -45,6 +45,18 @@
     <Filter Include="projects\lunar\Utils">
       <UniqueIdentifier>{3c16889b-ac03-483e-8a8b-fbc0e2fc606a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendors\Lua54">
+      <UniqueIdentifier>{714c9b18-020a-47a9-aad7-f251b2ce69dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\Lua54\lua">
+      <UniqueIdentifier>{eebdebe6-30f5-4514-b5e9-b6e055ff0f99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects\lunar\Gui">
+      <UniqueIdentifier>{c43add00-68b8-4d16-ba6a-7e116b7e4373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects\lunar\Gui\Panels">
+      <UniqueIdentifier>{45985e44-85c7-46bf-b5e8-5772e132c045}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DLLMain.cpp">
@@ -98,14 +110,122 @@
     <ClCompile Include="Utils\VFunc.cpp">
       <Filter>projects\lunar\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_Reset.cpp">
-      <Filter>projects\lunar\Hooks\Definitions</Filter>
-    </ClCompile>
-    <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_Present.cpp">
-      <Filter>projects\lunar\Hooks\Definitions</Filter>
-    </ClCompile>
     <ClCompile Include="Hooks\Definitions\IDirect3DDevice9_EndScene.cpp">
       <Filter>projects\lunar\Hooks\Definitions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lapi.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lauxlib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lbaselib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lcode.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lcorolib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lctype.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\ldblib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\ldebug.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\ldo.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\ldump.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lfunc.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lgc.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\linit.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\liolib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\llex.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lmathlib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lmem.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\loadlib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lobject.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lopcodes.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\loslib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lparser.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lstate.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lstring.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lstrlib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\ltable.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\ltablib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\ltm.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lundump.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lutf8lib.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lvm.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua54\lua\lzio.c">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Interface.cpp">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Pattern.cpp">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Math.cpp">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\CGuiMgr.cpp">
+      <Filter>projects\lunar\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\PanelMgr.cpp">
+      <Filter>projects\lunar\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Panels\MainPanel.cpp">
+      <Filter>projects\lunar\Gui\Panels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -262,5 +382,118 @@
     <ClInclude Include="Utils\VFunc.h">
       <Filter>projects\lunar\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lapi.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lauxlib.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lcode.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lctype.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\ldebug.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\ldo.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lfunc.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lgc.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\ljumptab.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\llex.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\llimits.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lmem.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lobject.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lopcodes.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lopnames.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lparser.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lprefix.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lstate.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lstring.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\ltable.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\ltm.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lua.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lua.hpp">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\luaconf.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lualib.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lundump.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lvm.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua54\lua\lzio.h">
+      <Filter>vendors\Lua54\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Interface.h">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Pattern.h">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Math.h">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Vector.h">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Vector2D.h">
+      <Filter>projects\lunar\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\CGuiMgr.h">
+      <Filter>projects\lunar\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\CGuiPanel.h">
+      <Filter>projects\lunar\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\Panels\MainPanel.h">
+      <Filter>projects\lunar\Gui\Panels</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\vendors\lua54\lua\Makefile">
+      <Filter>vendors\Lua54\lua</Filter>
+    </None>
   </ItemGroup>
 </Project>
