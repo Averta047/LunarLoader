@@ -1,44 +1,38 @@
 #include "MainPanel.h"
+#include "../CCodeEditor.h"
 
 #include "imgui.h"
-#include "imgui_lua_editor.h"
 
 #include <string>
 
-TextEditor g_LuaInput;
-
 MainPanel::MainPanel()
 {
-
+    m_pCodeEditor = new CCodeEditor();
+    m_pCodeEditor->SetLanguageDefinition(CCodeEditor::LanguageDefinition::Lua());
 }
 
 MainPanel::~MainPanel()
 {
+    if (m_pCodeEditor != nullptr)
+    {
+        delete m_pCodeEditor;
+    }
 }
 
-void MainPanel::Render() {
+void MainPanel::Render() 
+{
     ImGuiStyle& style = ImGui::GetStyle();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
 
-    ImGui::SetNextWindowSize(ImVec2(520, 330), ImGuiCond_Once);
-    ImGui::Begin("LunarLoader - Averta047");
+    ImGui::SetNextWindowSize(ImVec2(730, 500), ImGuiCond_Once);
+    ImGui::Begin("MainPanel", nullptr, ImGuiWindowFlags_NoDecoration);
     {
-        g_LuaInput.Render("Editor", ImVec2(ImGui::GetWindowWidth() - style.WindowPadding.x * 2, ImGui::GetWindowHeight() - ImGui::GetFrameHeight() * 2 - style.WindowPadding.y * 2 - style.ItemSpacing.y), false);
-        
-        ImGui::Spacing();
-        ImGui::BeginGroup();
+        ImGui::BeginChild("Header", ImVec2(0, ImGui::GetFrameHeight()), ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground);
         {
-            ImGui::Button("Clear");
 
-            ImGui::SameLine(ImGui::GetWindowWidth() / 2 - (ImGui::CalcTextSize("Open FileSave File").x + style.FramePadding.x * 4 + style.ItemSpacing.x) / 2);
-            ImGui::Button("Open File");
-            ImGui::SameLine();
-            ImGui::Button("Save Script");
-
-            ImGui::SameLine(ImGui::GetWindowWidth() - ImGui::CalcTextSize("Execute").x - style.FramePadding.x * 2 - style.WindowPadding.x - style.ItemSpacing.x);
-            ImGui::Button("Execute");
         }
-        ImGui::EndGroup();
+        ImGui::EndChild();
+        m_pCodeEditor->Render("CodeEditor", ImVec2(200, 100), false);
     }
     ImGui::End();
 }

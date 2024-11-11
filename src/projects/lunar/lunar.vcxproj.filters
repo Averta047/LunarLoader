@@ -236,11 +236,11 @@
     <ClCompile Include="Gui\Panels\MainPanel.cpp">
       <Filter>projects\lunar\Gui\Panels</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\vendors\Dear ImGui\addons\imgui_lua_editor.cpp">
-      <Filter>vendors\Dear ImGui\addons</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\vendors\Dear ImGui\addons\imgui_addons.cpp">
       <Filter>vendors\Dear ImGui\addons</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\CCodeEditor.cpp">
+      <Filter>projects\lunar\Gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -505,14 +505,14 @@
     <ClInclude Include="Gui\Panels\MainPanel.h">
       <Filter>projects\lunar\Gui\Panels</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\vendors\Dear ImGui\addons\imgui_lua_editor.h">
-      <Filter>vendors\Dear ImGui\addons</Filter>
-    </ClInclude>
     <ClInclude Include="Resources\Fonts\MuseoSans300.h">
       <Filter>projects\lunar\Resources\Fonts</Filter>
     </ClInclude>
     <ClInclude Include="..\..\vendors\Dear ImGui\addons\imgui_addons.h">
       <Filter>vendors\Dear ImGui\addons</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\CCodeEditor.h">
+      <Filter>projects\lunar\Gui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
